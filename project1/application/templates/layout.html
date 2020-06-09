@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% if title %}
+			<title>Project 1 - {{ username }}</title>
+		{% else %}
+			<title>Project 1</title>
+		{% endif %}
+	</head>
+	<body>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, message in messages %}
+					{{ message }}
+				{% endfor %}
+
+			{% endif %}
+		{% endwith %}
+		{% block content %}{% endblock %}
+	</body>
+</html>

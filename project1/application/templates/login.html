@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+        <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                        <legend>Login</legend>
+                        {{ form.email.label }}
+                        {{ form.email }}
+                        {{ form.password.label }}
+                        {{ form.password }}
+			{{ form.remember }}
+			{{ form.remember.label }}
+                </fieldset>
+                {{ form.submit }}
+        </form>
+        <small>
+                 <a href="#"> Forgot Password? </a>
+        </small>
+	<small>
+		Need An Account <a href='{{url_for('register') }}'> Register </a>
+	</small>
+</div>
+{% endblock content %}
+
